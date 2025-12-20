@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BloodCare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🩸 BloodCare</h1>
+</header>
+
+<!-- HOME -->
+<section id="home">
+  <h2>Home Dashboard</h2>
+
+  <div class="stats">
+    <div class="card">🩸<br><b>O+</b><br>Blood Type</div>
+    <div class="card">⏱️<br><b>2 mo</b><br>Last Donation</div>
+    <div class="card">❤️<br><b>5</b><br>Lives Saved</div>
+  </div>
+
+  <button class="primary" onclick="donateNow()">Donate Now</button>
+  <button class="secondary" onclick="show('request')">Request Blood</button>
+</section>
+
+<!-- REQUEST BLOOD -->
+<section id="request">
+  <h2>Request Blood</h2>
+  <input id="reqName" placeholder="Patient Name">
+  <select id="reqBlood">
+    <option value="">Blood Group</option>
+    <option>O+</option><option>O-</option><option>A+</option>
+  </select>
+  <input id="reqLocation" placeholder="Location">
+  <input id="reqContact" placeholder="Contact">
+  <button class="primary" onclick="submitRequest()">Submit</button>
+</section>
+
+<!-- CENTERS -->
+<section id="centers">
+  <h2>Select Donation Center</h2>
+  <div class="center" onclick="selectCenter('Apollo Blood Bank')">🏥 Apollo Blood Bank</div>
+  <div class="center" onclick="selectCenter('City Hospital')">🏥 City Hospital</div>
+</section>
+
+<!-- DONOR FORM -->
+<section id="donor">
+  <h2>Donor Details</h2>
+  <p id="centerName"></p>
+  <input id="donorName" placeholder="Your Name">
+  <select id="donorBlood">
+    <option value="">Blood Group</option>
+    <option>O+</option><option>O-</option><option>A+</option>
+  </select>
+  <input id="donorContact" placeholder="Contact">
+  <button class="primary" onclick="submitDonor()">Submit</button>
+</section>
+
+<!-- THANK YOU -->
+<section id="thankyou">
+  <h2>Thank You ❤️</h2>
+  <p>You are a life saver.</p>
+  <button onclick="show('home')">Go Home</button>
+</section>
+
+<!-- LEARN + GEMINI -->
+<section id="learn">
+  <h2>Learn & Ask Gemini</h2>
+
+  <div class="faq" onclick="toggle(1)">
+    Who can donate blood?
+    <p id="a1">Healthy people aged 18–65 can donate.</p>
+  </div>
+
+  <div class="faq" onclick="toggle(2)">
+    Is blood donation safe?
+    <p id="a2">Yes. It is safe and uses sterile equipment.</p>
+  </div>
+
+  <div class="card">
+    <h3>🤖 Ask Google Gemini</h3>
+    <input id="geminiQ" placeholder="Ask a question...">
+    <button class="primary" onclick="askGemini()">Ask</button>
+    <p id="geminiA"></p>
+    <small>Powered by Google Gemini</small>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history">
+  <h2>Donation History</h2>
+  <div class="card" onclick="details()">🩸 O+ – Apollo – June 2025</div>
+</section>
+
+<section id="details">
+  <h2>Donation Details</h2>
+  <p>Blood: O+<br>Center: Apollo<br>Status: Successful ❤️</p>
+  <button onclick="show('history')">Back</button>
+</section>
+
+<!-- PROFILE -->
+<section id="profile">
+  <h2>My Profile</h2>
+  <h1 style="color:red;">Mahalakshmi</h1>
+  <h3>Blood Group: O+</h3>
+  <div class="stats">
+    <div class="card"><h1>5</h1>Donations</div>
+    <div class="card"><h1>15+</h1>Lives Saved</div>
+  </div>
+  <p class="inspire">🌟 “One drop can save a life.”</p>
+</section>
+
+<!-- BOTTOM NAV -->
+<nav>
+  <button onclick="show('home')">🏠<br>Home</button>
+  <button onclick="show('centers')">🏥<br>Centers</button>
+  <button onclick="show('learn')">📚<br>Learn</button>
+  <button onclick="show('history')">🧾<br>History</button>
+  <button onclick="show('profile')">👤<br>Profile</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
